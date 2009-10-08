@@ -1,1 +1,2 @@
-(apply + (filter #(or (zero? (mod % 3)) (zero? (mod % 5))) u1k))
+(defn has-divisor [n & items] (some #(zero? (mod n %)) items))
+(apply + (filter #(has-divisor % 3 5) (range 1000)))
